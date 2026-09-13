@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PlacementPrep — Drive Day Practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="hall">
+
+  <!-- HERO / ADMIT CARD HEADER -->
+  <header class="admit-card">
+    <div class="admit-left">
+      <p class="admit-kicker">Placement Drive · Practice Room</p>
+      <h1 class="admit-title">PlacementPrep</h1>
+      <p class="admit-sub">Quantitative, logical &amp; technical rounds — timed like the real thing.</p>
+    </div>
+    <div class="admit-right">
+      <div class="admit-stat">
+        <span class="admit-stat-num" id="streakStat">0</span>
+        <span class="admit-stat-label">day streak</span>
+      </div>
+      <div class="admit-stat">
+        <span class="admit-stat-num" id="bestStat">—</span>
+        <span class="admit-stat-label">best score</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- CATEGORY SELECTION -->
+  <section class="room-select" id="roomSelect">
+    <p class="section-label">Choose a room to enter</p>
+    <div class="room-grid" id="roomGrid"></div>
+  </section>
+
+  <!-- QUIZ ROOM -->
+  <section class="quiz-room hidden" id="quizRoom">
+    <div class="quiz-topbar">
+      <button class="exit-btn" id="exitBtn" aria-label="Leave room">← Leave room</button>
+      <div class="quiz-progress-wrap">
+        <div class="quiz-progress-track">
+          <div class="quiz-progress-fill" id="progressFill"></div>
+        </div>
+        <span class="quiz-progress-text" id="progressText">Question 1 of 10</span>
+      </div>
+      <div class="timer" id="timer">00:20</div>
+    </div>
+
+    <div class="question-card">
+      <p class="question-tag" id="questionTag">Quantitative Aptitude</p>
+      <h2 class="question-text" id="questionText">Loading question…</h2>
+      <div class="options" id="optionsList"></div>
+    </div>
+
+    <div class="quiz-footer">
+      <p class="score-live">Score: <strong id="liveScore">0</strong></p>
+      <button class="next-btn" id="nextBtn" disabled>Next question</button>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="results-room hidden" id="resultsRoom">
+    <p class="section-label">Result sheet</p>
+    <h2 class="results-headline" id="resultsHeadline">Room cleared</h2>
+    <div class="results-grid">
+      <div class="result-tile">
+        <span class="result-num" id="resultScore">0/10</span>
+        <span class="result-label">Correct answers</span>
+      </div>
+      <div class="result-tile">
+        <span class="result-num" id="resultAccuracy">0%</span>
+        <span class="result-label">Accuracy</span>
+      </div>
+      <div class="result-tile">
+        <span class="result-num" id="resultTime">0:00</span>
+        <span class="result-label">Time taken</span>
+      </div>
+    </div>
+    <div class="review-list" id="reviewList"></div>
+    <div class="results-actions">
+      <button class="retry-btn" id="retryBtn">Retry this room</button>
+      <button class="lobby-btn" id="lobbyBtn">Back to lobby</button>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
